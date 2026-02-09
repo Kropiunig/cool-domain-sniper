@@ -1,0 +1,13 @@
+{
+  "name": "cool-domain-sniper",
+  "version": "1.0.0",
+  "description": "Continuously hunts for cool available domain names",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "snipe": "node src/index.js"
+  },
+  "keywords": ["domain", "sniper", "availability"],
+  "license": "MIT"
+}

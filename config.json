@@ -1,0 +1,9 @@
+{
+  "keywords": ["code", "cyber", "quantum", "pixel", "neural", "cloud", "stack", "craft"],
+  "personalNames": ["alex", "kax"],
+  "tlds": [".com", ".dev", ".io", ".app", ".co", ".ai", ".sh", ".xyz", ".cool", ".lol"],
+  "maxPricePerYear": 50,
+  "requestDelayMs": 800,
+  "batchSize": 10,
+  "strategies": ["short", "keyword", "personal", "expired"]
+}
