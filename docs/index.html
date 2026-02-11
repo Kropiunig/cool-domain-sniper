@@ -217,13 +217,11 @@
 
 <script>
 // --- Config ---
-const REPO_OWNER = 'Kropiunig';
-const REPO_NAME = 'cool-domain-sniper';
-const BRANCH = 'main';
-const PASSWORD_HASH = 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3';
+// SHA-256 of "KaxSniper2026!"
+const PASSWORD_HASH = '0b65e570a71580849acaa7eaa330513c8d0037f3523405ec6c94e8ca543ac934';
 
-function rawUrl(path) {
-  return `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/${BRANCH}/${path}`;
+function dataUrl(file) {
+  return `data/${file}`;
 }
 
 // --- Auth ---
@@ -264,8 +262,8 @@ let currentSort = { key: 'checkedAt', asc: false };
 async function refreshData() {
   try {
     const [resRes, statRes] = await Promise.allSettled([
-      fetch(rawUrl('data/results.json') + '?t=' + Date.now()),
-      fetch(rawUrl('data/status.json') + '?t=' + Date.now()),
+      fetch(dataUrl('results.json') + '?t=' + Date.now()),
+      fetch(dataUrl('status.json') + '?t=' + Date.now()),
     ]);
 
     if (resRes.status === 'fulfilled' && resRes.value.ok) {

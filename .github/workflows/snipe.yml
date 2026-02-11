@@ -19,7 +19,9 @@ jobs:
           node-version: 22
       - run: node src/index.js --max-runtime 1200000
       - run: |
+          cp data/results.json docs/data/results.json 2>/dev/null || mkdir -p docs/data && cp data/results.json docs/data/results.json
+          cp data/status.json docs/data/status.json 2>/dev/null || cp data/status.json docs/data/status.json
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/results.json data/status.json
+          git add data/results.json data/status.json docs/data/results.json docs/data/status.json
           git diff --staged --quiet || git commit -m "Update sniper results" && git push
